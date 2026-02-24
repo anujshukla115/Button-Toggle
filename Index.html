@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Toggles – 30 creative designs (all‑in‑one)</title>
+    <link href="https://fonts.googleapis.com/css?family=Margarine|Rubik:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+    <style>
+        /* === style.css – fully embedded, nothing missing === */
+        body {
+            background: #2e394d;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Rubik', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        *:before, *:after {
+            content: "";
+            position: absolute;
+        }
+
+        .toggle-wrapper {
+            flex: 1 1 calc(100% / 3);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        @media (max-width: 960px) {
+            .toggle-wrapper { flex: 1 1 calc(100% / 2); }
+        }
+        @media (max-width: 700px) {
+            .toggle-wrapper { flex: 1 1 100%; }
+        }
+
+        /* UNIQUE BACKGROUND COLORS FOR EACH TOGGLE CARD – 30+ COLORS */
+        .toggle-wrapper:nth-child(1) { background: #FF6B6B; }
+        .toggle-wrapper:nth-child(2) { background: #4ECDC4; }
+        .toggle-wrapper:nth-child(3) { background: #45B7D1; }
+        .toggle-wrapper:nth-child(4) { background: #96CEB4; }
+        .toggle-wrapper:nth-child(5) { background: #FFE194; }
+        .toggle-wrapper:nth-child(6) { background: #6f4e37; }      /* coffee custom */
+        .toggle-wrapper:nth-child(7) { background: #4a6fa5; }      /* robot */
+        .toggle-wrapper:nth-child(8) { background: #95a5a6; }      /* lock */
+        .toggle-wrapper:nth-child(9) { background: #3498db; }      /* weather */
+        .toggle-wrapper:nth-child(10) { background: #f0a69e; }     /* heartbeat */
+        .toggle-wrapper:nth-child(11) { background: #34495e; }     /* rocket */
+        .toggle-wrapper:nth-child(12) { background: #27ae60; }     /* plant */
+        .toggle-wrapper:nth-child(13) { background: #2c3e50; }     /* ninja */
+        .toggle-wrapper:nth-child(14) { background: #8e44ad; }     /* alien */
+        .toggle-wrapper:nth-child(15) { background: #e67e22; }     /* elements */
+        .toggle-wrapper:nth-child(16) { background: #9b59b6; }     /* magic */
+        .toggle-wrapper:nth-child(17) { background: #34495e; }     /* penguin */
+        .toggle-wrapper:nth-child(18) { background: #d35400; }     /* pizza */
+        .toggle-wrapper:nth-child(19) { background: #7f8c8d; }     /* ghost */
+        .toggle-wrapper:nth-child(20) { background: #27ae60; }     /* battery */
+        .toggle-wrapper:nth-child(21) { background: #8e44ad; }     /* unicorn */
+        .toggle-wrapper:nth-child(22) { background: #c0392b; }     /* volcano */
+        .toggle-wrapper:nth-child(23) { background: #7f8c8d; }     /* hourglass */
+        .toggle-wrapper:nth-child(24) { background: #d35400; }     /* cactus */
+        .toggle-wrapper:nth-child(25) { background: #3498db; }     /* snowman */
+        .toggle-wrapper:nth-child(26) { background: #e74c3c; }     /* dragon */
+        .toggle-wrapper:nth-child(27) { background: #f1c40f; }     /* lightbulb */
+        .toggle-wrapper:nth-child(28) { background: #1abc9c; }     /* jellyfish */
+        .toggle-wrapper:nth-child(29) { background: #f39c12; }     /* treasure */
+        .toggle-wrapper:nth-child(30) { background: #e67e22; }     /* phoenix */
+
+        .name {
+            margin-top: 20px;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+        }
+
+        /* toggle base */
+        .toggle {
+            position: relative;
+            width: 120px;
+            height: 60px;
+        }
+        .toggle input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: pointer;
+        }
+        .toggle-item {
+            display: block;
+            width: 120px;
+            height: 60px;
+            border: 3px solid #fff;
+            border-radius: 60px;
+            position: relative;
+            cursor: pointer;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .toggle-item:before {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+        }
+        input:checked + .toggle-item:before {
+            transform: translateX(58px);
+        }
+
+        /* ===== ORIGINAL TOGGLES ===== */
+        .normal .toggle-item { background: #e3c38b; }
+
+        .transparent .toggle-item { background: rgba(255,255,255,0.3); }
+        .transparent .toggle-item:before { background: rgba(255,255,255,0.8); border:2px solid #fff; }
+
+       /* Checkcross toggle - ALTERNATIVE VERSION with Unicode */
+.checkcross .toggle-item:before {content: none;}
+
+.checkcross .check {width: 50px;height: 50px;border-radius: 50%;background: #8BC34A;position: absolute;top: 5px;left: 5px;transition: all 0.4s ease;z-index: 1;display: flex;align-items: center;justify-content: center;color: white;font-size: 30px;font-weight: bold;}
+.checkcross .check:before {content: "✓";position: absolute;color: white;font-size: 30px;line-height: 1;}
+.checkcross .check:after {content: none;}
+#checkcross:checked + .toggle-item .check {transform: translateX(58px) rotate(360deg);background: #c34a4a;}
+#checkcross:checked + .toggle-item .check:before {content: "✕";font-size: 30px;}
+
+        .gravity .toggle-item { transition: transform 0.6s cubic-bezier(0.895,0.03,0.685,0.22); }
+        .gravity .toggle-item:before { transition: transform 0.6s cubic-bezier(0.895,0.03,0.685,0.22) 0.2s; }
+        #gravity:checked + .toggle-item { transform: rotate(90deg); }
+        #gravity:checked + .toggle-item:before { transform: translateX(58px); }
+
+        /* Light/Dark */
+        .light-dark .sun-moon { position:absolute; width:50px; height:50px; top:5px; left:5px; transition:0.4s ease; }
+        .light-dark .sun { position:absolute; width:30px; height:30px; background:#f1c40f; border-radius:50%; top:10px; left:10px; box-shadow:0 0 20px #f1c40f; }
+        .light-dark .moon { position:absolute; width:25px; height:25px; background:#ecf0f1; border-radius:50%; top:12px; left:12px; opacity:0; transform:scale(0); transition:0.3s ease; box-shadow:inset -5px -3px 0 #bdc3c7; }
+        #light-dark:checked + .toggle-item .sun-moon { transform:translateX(58px) rotate(180deg); }
+        #light-dark:checked + .toggle-item .sun { opacity:0; transform:scale(0); }
+        #light-dark:checked + .toggle-item .moon { opacity:1; transform:scale(1); }
+
+        /* Coffee */
+        .coffee .coffee-cup { position:absolute; width:45px; height:35px; background:#d35400; border-radius:0 0 20px 20px; top:12px; left:10px; transition:0.4s ease; }
+        .coffee .coffee-cup:before { content:""; position:absolute; width:15px; height:20px; border:3px solid #d35400; border-left:none; border-radius:0 20px 20px 0; right:-15px; top:5px; }
+        .coffee .liquid { position:absolute; width:35px; height:20px; background:#7b3f00; border-radius:10px; bottom:5px; left:5px; }
+        .coffee .steam { position:absolute; width:8px; height:20px; background:rgba(255,255,255,0.6); border-radius:10px; top:-15px; opacity:0; transition:0.3s ease; }
+        .coffee .steam:nth-child(1) { left:15px; } .coffee .steam:nth-child(2) { left:25px; } .coffee .steam:nth-child(3) { left:35px; }
+        #coffee:checked + .toggle-item .coffee-cup { transform:translateX(58px); }
+        #coffee:checked + .toggle-item .steam { opacity:1; animation:steam 1s infinite; }
+        @keyframes steam { 0%{transform:translateY(0); opacity:0.6;} 100%{transform:translateY(-15px); opacity:0;} }
+
+        /* Robot */
+        .robot .robot-face { position:absolute; width:50px; height:45px; background:#3498db; border-radius:20px; top:7px; left:5px; transition:0.4s ease; }
+        .robot .antenna { position:absolute; width:4px; height:15px; background:#e74c3c; top:-12px; left:15px; }
+        .robot .antenna.right { left:30px; }
+        .robot .antenna:before { content:""; width:8px; height:8px; background:#f1c40f; border-radius:50%; top:-8px; left:-2px; position:absolute; }
+        .robot .eyes { position:absolute; width:100%; top:12px; display:flex; justify-content:space-around; }
+        .robot .eye { width:10px; height:10px; background:white; border-radius:50%; transition:0.2s ease; }
+        .robot .mouth { position:absolute; width:20px; height:5px; background:#e74c3c; bottom:10px; left:15px; border-radius:5px; transition:0.3s ease; }
+        #robot:checked + .toggle-item .robot-face { transform:translateX(58px) scale(1.1); }
+        #robot:checked + .toggle-item .eye { transform:scaleX(0.2); animation:blink 3s infinite; }
+        #robot:checked + .toggle-item .mouth { border-radius:20px 20px 5px 5px; height:8px; }
+        @keyframes blink { 0%,95%,100%{transform:scaleY(1);} 97%{transform:scaleY(0.1);} }
+
+        /* Lock */
+        .lock .lock-icon { position:absolute; width:35px; height:35px; top:12px; left:12px; transition:0.4s ease; }
+        .lock .lock-body { position:absolute; width:30px; height:25px; background:#f1c40f; border-radius:5px; bottom:0; }
+        .lock .lock-shackle { position:absolute; width:20px; height:20px; border:4px solid #f1c40f; border-radius:20px 20px 0 0; border-bottom:none; top:-10px; left:5px; }
+        #lock:checked + .toggle-item .lock-icon { transform:translateX(58px); }
+        #lock:checked + .toggle-item .lock-shackle { border-color:#27ae60; transform:rotate(10deg) translateX(3px); }
+
+        /* Weather */
+        .weather .weather-icon { position:absolute; width:50px; height:50px; top:5px; left:5px; transition:0.4s ease; }
+        .weather .sunny { position:absolute; width:25px; height:25px; background:#f1c40f; border-radius:50%; top:12px; left:12px; opacity:1; transition:0.3s ease; }
+        .weather .ray { position:absolute; width:6px; height:15px; background:#f1c40f; border-radius:3px; top:5px; left:22px; transform-origin:bottom; }
+        .weather .ray:nth-child(1) { transform:rotate(0deg) translateY(-15px); }
+        .weather .ray:nth-child(2) { transform:rotate(45deg) translateY(-15px); }
+        .weather .ray:nth-child(3) { transform:rotate(90deg) translateY(-15px); }
+        .weather .ray:nth-child(4) { transform:rotate(135deg) translateY(-15px); }
+        .weather .rainy { position:absolute; opacity:0; transition:0.3s ease; }
+        .weather .cloud { position:absolute; width:35px; height:20px; background:#ecf0f1; border-radius:20px; top:15px; left:8px; }
+        .weather .raindrop { position:absolute; width:4px; height:10px; background:#3498db; border-radius:2px; animation:rain 1s infinite; }
+        .weather .raindrop:nth-child(2) { left:15px; top:30px; animation-delay:0.2s; }
+        .weather .raindrop:nth-child(3) { left:25px; top:30px; animation-delay:0.4s; }
+        .weather .raindrop:nth-child(4) { left:35px; top:30px; animation-delay:0.6s; }
+        #weather:checked + .toggle-item .weather-icon { transform:translateX(58px); }
+        #weather:checked + .toggle-item .sunny { opacity:0; transform:scale(0); }
+        #weather:checked + .toggle-item .rainy { opacity:1; }
+        @keyframes rain { 0%{transform:translateY(0); opacity:1;} 100%{transform:translateY(15px); opacity:0;} }
+
+        /* Heartbeat */
+        .heartbeat .heart { position:absolute; width:30px; height:30px; background:#e74c3c; transform:rotate(45deg); top:15px; left:15px; transition:0.4s ease; }
+        .heartbeat .heart:before, .heartbeat .heart:after { content:""; position:absolute; width:30px; height:30px; background:#e74c3c; border-radius:50%; }
+        .heartbeat .heart:before { left:-15px; } .heartbeat .heart:after { top:-15px; }
+        .heartbeat .ecg-line { position:absolute; width:0; height:3px; background:white; top:28px; left:10px; transition:0.4s ease; opacity:0; }
+        #heartbeat:checked + .toggle-item .heart { transform:translateX(58px) rotate(45deg) scale(1.2); animation:heartbeat 1s infinite; }
+        #heartbeat:checked + .toggle-item .ecg-line { width:40px; opacity:1; animation:ecg 1s infinite; }
+        @keyframes heartbeat { 0%,100%{transform:translateX(58px) rotate(45deg) scale(1);} 50%{transform:translateX(58px) rotate(45deg) scale(1.3);} }
+        @keyframes ecg { 0%,100%{width:40px;} 50%{width:60px;} }
+
+        /* Rocket */
+        .rocket .rocket-ship { position:absolute; width:35px; height:45px; background:#e74c3c; clip-path:polygon(0% 0%,100% 0%,80% 100%,20% 100%); top:7px; left:10px; transition:0.4s ease; z-index:2; }
+        .rocket .window { position:absolute; width:10px; height:10px; background:#87CEEB; border-radius:50%; top:15px; left:12px; border:2px solid white; }
+        .rocket .flame { position:absolute; width:15px; height:20px; background:#f39c12; clip-path:polygon(0% 0%,100% 0%,50% 100%); bottom:-15px; left:10px; animation:flicker 0.2s infinite; opacity:0; transition:0.3s ease; }
+        .rocket .stars { position:absolute; width:100%; height:100%; opacity:0; transition:0.3s ease; }
+        .rocket .stars:before, .rocket .stars:after { content:"✦"; position:absolute; color:white; font-size:12px; }
+        .rocket .stars:before { top:10px; left:80px; animation:twinkle 1s infinite; }
+        .rocket .stars:after { top:30px; left:90px; animation:twinkle 1s infinite 0.3s; }
+        #rocket:checked + .toggle-item .rocket-ship { transform:translateX(58px) translateY(-5px); }
+        #rocket:checked + .toggle-item .flame { opacity:1; }
+        #rocket:checked + .toggle-item .stars { opacity:1; }
+        @keyframes flicker { 0%,100%{transform:scaleY(1);} 50%{transform:scaleY(1.3);} }
+        @keyframes twinkle { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+        /* Plant */
+        .plant .plant-pot { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .plant .pot { position:absolute; width:35px; height:20px; background:#e67e22; border-radius:0 0 10px 10px; bottom:5px; left:5px; }
+        .plant .seed { position:absolute; width:8px; height:8px; background:#795548; border-radius:50%; bottom:15px; left:18px; transition:0.3s ease; }
+        .plant .sprout { position:absolute; width:3px; height:0; background:#27ae60; bottom:22px; left:20px; transition:0.3s ease 0.1s; }
+        .plant .leaf { position:absolute; width:0; height:0; background:#2ecc71; border-radius:50% 0 50% 0; transition:0.3s ease 0.2s; bottom:25px; left:18px; }
+        .plant .leaf.right { left:22px; transform:rotate(90deg); }
+        #plant:checked + .toggle-item .plant-pot { transform:translateX(58px); }
+        #plant:checked + .toggle-item .seed { transform:scale(0); }
+        #plant:checked + .toggle-item .sprout { height:20px; }
+        #plant:checked + .toggle-item .leaf { width:8px; height:8px; }
+
+        /* Ninja */
+        .ninja .shuriken { position:absolute; width:40px; height:40px; background:#2c3e50; clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); top:10px; left:10px; transition:0.4s ease; }
+        .ninja .shadow { position:absolute; width:30px; height:10px; background:rgba(0,0,0,0.3); border-radius:50%; bottom:5px; left:15px; filter:blur(2px); transition:0.4s ease; }
+        #ninja:checked + .toggle-item .shuriken { transform:translateX(58px) rotate(360deg); animation:spin 1s infinite linear; }
+        #ninja:checked + .toggle-item .shadow { transform:translateX(58px) scale(0.8); }
+        @keyframes spin { from{transform:translateX(58px) rotate(0deg);} to{transform:translateX(58px) rotate(360deg);} }
+
+        /* Alien */
+        .alien .ufo { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .alien .saucer { position:absolute; width:40px; height:15px; background:#7f8c8d; border-radius:20px; top:20px; }
+        .alien .dome { position:absolute; width:20px; height:20px; background:#2ecc71; border-radius:50%; top:8px; left:10px; }
+        .alien .beam { position:absolute; width:100%; height:0; background:rgba(46,204,113,0.3); top:35px; transition:0.3s ease; }
+        #alien:checked + .toggle-item .ufo { transform:translateX(58px); }
+        #alien:checked + .toggle-item .beam { height:20px; animation:scan 2s infinite; }
+        @keyframes scan { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
+
+        /* Elements */
+        .elements .element-fire, .elements .element-water { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .elements .element-water { opacity:0; transform:scale(0); }
+        .elements .flame { position:absolute; width:15px; height:25px; background:#e74c3c; border-radius:50% 50% 20% 20%; transform-origin:bottom; animation:burn 0.5s infinite; }
+        .elements .flame:nth-child(1) { left:10px; } .elements .flame:nth-child(2) { left:20px; animation-delay:0.2s; } .elements .flame:nth-child(3) { left:30px; animation-delay:0.4s; }
+        .elements .wave { position:absolute; width:15px; height:15px; background:#3498db; border-radius:50%; animation:flow 2s infinite; }
+        .elements .wave:nth-child(1) { left:10px; } .elements .wave:nth-child(2) { left:20px; animation-delay:0.3s; } .elements .wave:nth-child(3) { left:30px; animation-delay:0.6s; }
+        #elements:checked + .toggle-item .element-fire { opacity:0; transform:scale(0); }
+        #elements:checked + .toggle-item .element-water { opacity:1; transform:scale(1) translateX(58px); }
+        @keyframes burn { 0%,100%{transform:scaleY(1);} 50%{transform:scaleY(1.3);} }
+        @keyframes flow { 0%,100%{transform:translateX(0);} 50%{transform:translateX(10px);} }
+
+        /* Magic */
+        .magic .wand { position:absolute; width:40px; height:4px; background:#8e44ad; border-radius:4px; top:28px; left:10px; transform-origin:left; transition:0.4s ease; }
+        .magic .wand:before { content:"✦"; position:absolute; color:#f1c40f; font-size:20px; right:-5px; top:-10px; transform:rotate(15deg); }
+        .magic .sparkle { position:absolute; color:#f1c40f; font-size:10px; opacity:0; transition:0.3s ease; }
+        .magic .sparkle:nth-child(2) { top:15px; left:60px; } .magic .sparkle:nth-child(3) { top:25px; left:70px; } .magic .sparkle:nth-child(4) { top:35px; left:65px; }
+        .magic .magic-circle { position:absolute; width:0; height:0; border:2px solid #f1c40f; border-radius:50%; top:20px; left:60px; transition:0.4s ease; }
+        #magic:checked + .toggle-item .wand { transform:translateX(58px) rotate(15deg); }
+        #magic:checked + .toggle-item .sparkle { opacity:1; animation:sparkle 1s infinite; }
+        #magic:checked + .toggle-item .magic-circle { width:30px; height:30px; animation:pulse 1s infinite; }
+        @keyframes sparkle { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.3; transform:scale(1.5);} }
+        @keyframes pulse { 0%,100%{transform:scale(1); opacity:0.5;} 50%{transform:scale(1.2); opacity:1;} }
+
+         /* Penguin */
+        .penguin .penguin-body { position:absolute; width:45px; height:45px; background:#2c3e50; border-radius:50% 50% 40% 40%; top:7px; left:7px; transition:0.4s ease; }
+        .penguin .belly { position:absolute; width:25px; height:25px; background:white; border-radius:50%; top:10px; left:10px; }
+        .penguin .eye { position:absolute; width:5px; height:5px; background:black; border-radius:50%; top:15px; }
+        .penguin .eye:first-of-type { left:12px; } .penguin .eye:last-of-type { left:28px; }
+        .penguin .beak { position:absolute; width:8px; height:6px; background:#f39c12; clip-path:polygon(0% 0%,100% 50%,0% 100%); top:20px; left:19px; }
+        .penguin .wing { position:absolute; width:10px; height:20px; background:#1a2632; border-radius:50%; right:5px; top:15px; transform-origin:top; transition:0.3s ease; }
+        .penguin .feet { position:absolute; width:12px; height:5px; background:#f39c12; border-radius:5px; bottom:5px; left:10px; box-shadow:15px 0 0 #f39c12; }
+        #penguin:checked + .toggle-item .penguin-body { transform:translateX(58px); }
+        #penguin:checked + .toggle-item .wing { transform:rotate(30deg); animation:flap 0.5s infinite; }
+        @keyframes flap { 0%,100%{transform:rotate(30deg);} 50%{transform:rotate(0deg);} }
+
+        /* Pizza */
+        .pizza .pizza-slice { position:absolute; width:45px; height:45px; background:#f39c12; clip-path:polygon(0% 0%,100% 0%,50% 100%); top:7px; left:7px; transition:0.4s ease; transform-origin:top left; }
+        .pizza .crust { position:absolute; width:100%; height:8px; background:#d35400; top:0; }
+        .pizza .cheese { position:absolute; width:30px; height:30px; background:#f1c40f; clip-path:polygon(0% 0%,100% 0%,50% 100%); top:8px; left:7px; }
+        .pizza .pepperoni { position:absolute; width:8px; height:8px; background:#c0392b; border-radius:50%; }
+        .pizza .pepperoni:nth-child(4) { top:15px; left:15px; } .pizza .pepperoni:nth-child(5) { top:25px; left:10px; } .pizza .pepperoni:nth-child(6) { top:20px; left:25px; }
+        #pizza:checked + .toggle-item .pizza-slice { transform:translateX(58px) rotate(15deg) scale(1.1); }
+
+        /* Ghost */
+        .ghost .ghost-char { position:absolute; width:40px; height:45px; background:white; border-radius:20px 20px 0 0; top:7px; left:10px; transition:0.4s ease; }
+        .ghost .eyes { position:absolute; width:100%; top:12px; display:flex; justify-content:space-around; }
+        .ghost .eye { width:8px; height:12px; background:#2c3e50; border-radius:50%; transition:0.2s ease; }
+        .ghost .mouth { position:absolute; width:12px; height:6px; background:#e74c3c; border-radius:0 0 10px 10px; bottom:15px; left:14px; }
+        .ghost .tail { position:absolute; width:10px; height:10px; background:white; border-radius:50%; bottom:-5px; }
+        .ghost .tail:nth-child(5) { left:5px; } .ghost .tail:nth-child(6) { left:15px; } .ghost .tail:nth-child(7) { left:25px; }
+        #ghost:checked + .toggle-item .ghost-char { transform:translateX(58px); animation:float 2s infinite; }
+        #ghost:checked + .toggle-item .eye { height:6px; margin-top:6px; }
+        #ghost:checked + .toggle-item .mouth { width:16px; height:8px; border-radius:10px; }
+        @keyframes float { 0%,100%{transform:translateX(58px) translateY(0);} 50%{transform:translateX(58px) translateY(-5px);} }
+
+        /* Battery */
+        .battery .battery-cell { position:absolute; width:50px; height:30px; top:15px; left:10px; transition:0.4s ease; }
+        .battery .battery-body { position:absolute; width:40px; height:25px; background:#ecf0f1; border:3px solid #2c3e50; border-radius:5px; }
+        .battery .battery-head { position:absolute; width:8px; height:10px; background:#2c3e50; right:-8px; top:7px; border-radius:0 3px 3px 0; }
+        .battery .charge-level { position:absolute; width:8px; height:15px; background:#27ae60; bottom:5px; opacity:0; transition:0.3s ease; }
+        .battery .charge-level:nth-child(3) { left:8px; } .battery .charge-level:nth-child(4) { left:18px; transition-delay:0.1s; } .battery .charge-level:nth-child(5) { left:28px; transition-delay:0.2s; }
+        .battery .bolt { position:absolute; color:#f1c40f; font-size:20px; left:15px; top:0; opacity:0; transform:scale(0); transition:0.3s ease; }
+        #battery:checked + .toggle-item .battery-cell { transform:translateX(58px); }
+        #battery:checked + .toggle-item .charge-level { opacity:1; animation:pulse-green 1s infinite; }
+        #battery:checked + .toggle-item .bolt { opacity:1; transform:scale(1) rotate(15deg); animation:zap 0.5s infinite; }
+        @keyframes pulse-green { 0%,100%{background:#27ae60;} 50%{background:#2ecc71;} }
+        @keyframes zap { 0%,100%{transform:scale(1) rotate(15deg);} 50%{transform:scale(1.3) rotate(25deg);} }
+
+        /* Unicorn */
+        .unicorn .unicorn-head { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .unicorn .horn { position:absolute; width:8px; height:20px; background:linear-gradient(45deg,#f1c40f,#e67e22); clip-path:polygon(50% 0%,0% 100%,100% 100%); top:-10px; left:18px; z-index:2; }
+        .unicorn .ear { position:absolute; width:10px; height:15px; background:#f9e79f; border-radius:50% 50% 0 0; top:0; left:8px; transform:rotate(-15deg); }
+        .unicorn .ear.right { left:25px; transform:rotate(15deg); }
+        .unicorn .eye { position:absolute; width:6px; height:6px; background:#2c3e50; border-radius:50%; top:15px; left:19px; }
+        .unicorn .mane { position:absolute; width:12px; height:20px; background:#f7dc6f; border-radius:40% 0 0 40%; right:-5px; top:5px; transform:rotate(10deg); }
+        .unicorn .mane:nth-child(6) { right:0; top:15px; background:#f1948a; } .unicorn .mane:nth-child(7) { right:5px; top:25px; background:#85c1e9; }
+        .unicorn .rainbow { position:absolute; width:30px; height:15px; opacity:0; transition:0.3s ease; background:linear-gradient(90deg,#ff0000,#ffa500,#ffff00,#00ff00,#0000ff,#4b0082,#8f00ff); border-radius:10px; left:40px; top:15px; }
+        #unicorn:checked + .toggle-item .unicorn-head { transform:translateX(58px); }
+        #unicorn:checked + .toggle-item .rainbow { opacity:1; animation:rainbow-glow 2s infinite; }
+        @keyframes rainbow-glow { 0%,100%{filter:brightness(1);} 50%{filter:brightness(1.3);} }
+
+        /* Volcano */
+        .volcano .volcano-mountain { position:absolute; width:50px; height:45px; top:7px; left:5px; transition:0.4s ease; }
+        .volcano .mountain { position:absolute; width:40px; height:35px; background:#5d4037; clip-path:polygon(20% 100%,80% 100%,100% 0%,0% 0%); bottom:0; left:5px; }
+        .volcano .crater { position:absolute; width:15px; height:8px; background:#3e2723; border-radius:5px; top:10px; left:17px; }
+        .volcano .lava { position:absolute; width:8px; height:12px; background:#e74c3c; border-radius:50%; opacity:0; transition:0.3s ease; filter:blur(2px); }
+        .volcano .lava:nth-child(3) { top:15px; left:15px; animation:lava-flow 0.5s infinite; }
+        .volcano .lava:nth-child(4) { top:10px; left:22px; animation:lava-flow 0.5s infinite 0.2s; }
+        .volcano .lava:nth-child(5) { top:12px; left:28px; animation:lava-flow 0.5s infinite 0.4s; }
+        .volcano .smoke { position:absolute; width:10px; height:10px; background:rgba(255,255,255,0.5); border-radius:50%; opacity:0; transition:0.3s ease; filter:blur(3px); }
+        .volcano .smoke:nth-child(6) { top:-5px; left:15px; animation:smoke-rise 2s infinite; }
+        .volcano .smoke:nth-child(7) { top:-10px; left:25px; animation:smoke-rise 2s infinite 0.5s; }
+        #volcano:checked + .toggle-item .volcano-mountain { transform:translateX(58px); }
+        #volcano:checked + .toggle-item .lava, #volcano:checked + .toggle-item .smoke { opacity:1; }
+        @keyframes lava-flow { 0%{transform:translateY(0); opacity:1;} 100%{transform:translateY(10px); opacity:0;} }
+        @keyframes smoke-rise { 0%{transform:translateY(0) scale(1); opacity:0.5;} 100%{transform:translateY(-15px) scale(2); opacity:0;} }
+
+        /* Cactus */
+        .cactus .cactus-plant { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .cactus .pot { position:absolute; width:35px; height:15px; background:#e67e22; border-radius:5px 5px 10px 10px; bottom:5px; left:5px; }
+        .cactus .cactus-body { position:absolute; width:15px; height:25px; background:#27ae60; border-radius:8px; bottom:15px; left:15px; }
+        .cactus .cactus-arm { position:absolute; width:10px; height:15px; background:#27ae60; border-radius:5px; bottom:20px; left:8px; transform:rotate(-20deg); }
+        .cactus .cactus-arm.right { left:27px; transform:rotate(20deg); }
+        .cactus .flower { position:absolute; width:8px; height:8px; background:#f39c12; border-radius:50% 50% 50% 0; opacity:0; transform:scale(0); transition:0.3s ease; }
+        .cactus .flower:nth-child(6) { top:5px; left:10px; } .cactus .flower:nth-child(7) { top:2px; left:25px; }
+        #cactus:checked + .toggle-item .cactus-plant { transform:translateX(58px); }
+        #cactus:checked + .toggle-item .flower { opacity:1; transform:scale(1) rotate(45deg); animation:bloom 1s infinite; }
+        @keyframes bloom { 0%,100%{transform:scale(1) rotate(45deg);} 50%{transform:scale(1.2) rotate(90deg);} }
+
+        /* Treasure */
+        .treasure .treasure-chest { position:absolute; width:45px; height:40px; top:10px; left:7px; transition:0.4s ease; }
+        .treasure .chest-body { position:absolute; width:40px; height:25px; background:#8b4513; border-radius:5px 5px 10px 10px; bottom:0; }
+        .treasure .chest-lid { position:absolute; width:42px; height:10px; background:#a0522d; border-radius:5px 5px 0 0; top:5px; left:-1px; transform-origin:top; transition:0.3s ease; }
+        .treasure .lock { position:absolute; width:8px; height:8px; background:#f1c40f; border-radius:50%; top:12px; left:16px; }
+        .treasure .gold { position:absolute; width:6px; height:6px; background:#f1c40f; border-radius:50%; opacity:0; transform:scale(0); transition:0.3s ease; }
+        .treasure .gold:nth-child(4) { bottom:5px; left:5px; } .treasure .gold:nth-child(5) { bottom:10px; left:15px; } .treasure .gold:nth-child(6) { bottom:3px; left:25px; }
+        .treasure .glow { position:absolute; width:100%; height:100%; background:radial-gradient(circle,#f1c40f 0%,transparent 70%); opacity:0; transition:0.3s ease; }
+        #treasure:checked + .toggle-item .treasure-chest { transform:translateX(58px); }
+        #treasure:checked + .toggle-item .chest-lid { transform:rotate(-30deg) translateY(-5px); }
+        #treasure:checked + .toggle-item .gold { opacity:1; transform:scale(1); animation:sparkle-gold 1s infinite; }
+        #treasure:checked + .toggle-item .glow { opacity:0.3; }
+        @keyframes sparkle-gold { 0%,100%{transform:scale(1); opacity:1;} 50%{transform:scale(1.5); opacity:0.7;} }
+
+        /* Snowman */
+        .snowman .snowman-body { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .snowman .snowball { position:absolute; background:white; border-radius:50%; transition:0.3s ease; }
+        .snowman .snowball.bottom { width:35px; height:35px; bottom:0; left:5px; }
+        .snowman .snowball.middle { width:25px; height:25px; bottom:20px; left:10px; }
+        .snowman .snowball.top { width:18px; height:18px; bottom:35px; left:13px; }
+        .snowman .eye { position:absolute; width:3px; height:3px; background:#2c3e50; border-radius:50%; bottom:35px; }
+        .snowman .eye:first-of-type { left:18px; } .snowman .eye:last-of-type { left:23px; }
+        .snowman .nose { position:absolute; width:6px; height:6px; background:#f39c12; clip-path:polygon(0% 0%,100% 50%,0% 100%); bottom:32px; left:20px; }
+        .snowman .hat { position:absolute; width:20px; height:8px; background:#2c3e50; border-radius:2px; bottom:45px; left:12px; }
+        .snowman .puddle { position:absolute; width:0; height:0; background:#3498db; border-radius:50%; bottom:0; left:10px; opacity:0; transition:0.3s ease; }
+        #snowman:checked + .toggle-item .snowman-body { transform:translateX(58px); }
+        #snowman:checked + .toggle-item .snowball { transform:scale(0.8); }
+        #snowman:checked + .toggle-item .snowball.top, #snowman:checked + .toggle-item .snowball.middle { transform:scale(0.6) translateY(5px); }
+        #snowman:checked + .toggle-item .hat { transform:translateY(5px) rotate(10deg); }
+        #snowman:checked + .toggle-item .puddle { width:30px; height:5px; opacity:1; }
+
+        /* Dragon */
+        .dragon .dragon-head { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .dragon .head { position:absolute; width:30px; height:25px; background:#e67e22; border-radius:50% 50% 30% 30%; top:10px; left:7px; }
+        .dragon .horn { position:absolute; width:6px; height:12px; background:#d35400; clip-path:polygon(50% 0%,0% 100%,100% 100%); top:5px; left:12px; }
+        .dragon .horn.right { left:25px; }
+        .dragon .eye { position:absolute; width:5px; height:5px; background:#f1c40f; border-radius:50%; top:18px; }
+        .dragon .eye:first-of-type { left:15px; } .dragon .eye:last-of-type { left:25px; }
+        .dragon .nostril { position:absolute; width:3px; height:2px; background:#2c3e50; border-radius:50%; top:25px; left:20px; }
+        .dragon .fire { position:absolute; width:10px; height:10px; background:#e74c3c; border-radius:50%; opacity:0; transform:scale(0); transition:0.3s ease; filter:blur(2px); }
+        .dragon .fire:nth-child(8) { top:15px; left:35px; animation:breathe-fire 0.5s infinite; }
+        .dragon .fire:nth-child(9) { top:20px; left:40px; animation:breathe-fire 0.5s infinite 0.2s; }
+        .dragon .fire:nth-child(10) { top:25px; left:35px; animation:breathe-fire 0.5s infinite 0.4s; }
+        #dragon:checked + .toggle-item .dragon-head { transform:translateX(58px); }
+        #dragon:checked + .toggle-item .fire { opacity:1; transform:scale(1); }
+        @keyframes breathe-fire { 0%,100%{transform:scale(1); opacity:0.8;} 50%{transform:scale(1.5); opacity:1;} }
+
+        /* Lightbulb */
+        .lightbulb .bulb { position:absolute; width:40px; height:45px; top:7px; left:10px; transition:0.4s ease; }
+        .lightbulb .glass { position:absolute; width:30px; height:30px; background:#f9e79f; border-radius:50% 50% 30% 30%; top:5px; left:5px; transition:0.3s ease; }
+        .lightbulb .filament { position:absolute; width:8px; height:8px; background:#7f8c8d; border-radius:50%; top:15px; left:16px; }
+        .lightbulb .base { position:absolute; width:15px; height:10px; background:#95a5a6; border-radius:3px; bottom:5px; left:12px; }
+        .lightbulb .light-rays { position:absolute; width:5px; height:10px; background:#f1c40f; border-radius:2px; opacity:0; transform-origin:center; transition:0.3s ease; }
+        .lightbulb .light-rays:nth-child(5) { top:-5px; left:17px; transform:rotate(0deg); }
+        .lightbulb .light-rays:nth-child(6) { top:5px; left:35px; transform:rotate(90deg); }
+        .lightbulb .light-rays:nth-child(7) { bottom:0; left:35px; transform:rotate(90deg); }
+        .lightbulb .light-rays:nth-child(8) { top:15px; left:-5px; transform:rotate(0deg); }
+        #lightbulb:checked + .toggle-item .bulb { transform:translateX(58px); }
+        #lightbulb:checked + .toggle-item .glass { background:#f1c40f; box-shadow:0 0 20px #f1c40f; }
+        #lightbulb:checked + .toggle-item .light-rays { opacity:1; animation:shine 1s infinite; }
+        @keyframes shine { 0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.5; transform:scale(1.2);} }
+
+        /* Jellyfish */
+        .jellyfish .jelly { position:absolute; width:40px; height:45px; top:7px; left:10px; transition:0.4s ease; }
+        .jellyfish .bell { position:absolute; width:30px; height:20px; background:#ff6b9d; border-radius:50% 50% 30% 30%; top:5px; left:5px; animation:pulse-jelly 2s infinite; }
+        .jellyfish .tentacle { position:absolute; width:2px; height:20px; background:#ff8eb5; top:20px; border-radius:2px; animation:sway 2s infinite; }
+        .jellyfish .tentacle:nth-child(2) { left:8px; } .jellyfish .tentacle:nth-child(3) { left:15px; animation-delay:0.3s; }
+        .jellyfish .tentacle:nth-child(4) { left:22px; animation-delay:0.6s; } .jellyfish .tentacle:nth-child(5) { left:29px; animation-delay:0.9s; }
+        .jellyfish .glow-spot { position:absolute; width:5px; height:5px; background:rgba(255,255,255,0.8); border-radius:50%; opacity:0; transition:0.3s ease; filter:blur(1px); }
+        .jellyfish .glow-spot:nth-child(6) { top:10px; left:15px; } .jellyfish .glow-spot:nth-child(7) { top:15px; left:22px; }
+        #jellyfish:checked + .toggle-item .jelly { transform:translateX(58px); }
+        #jellyfish:checked + .toggle-item .glow-spot { opacity:1; animation:glow-pulse 1s infinite; }
+        @keyframes pulse-jelly { 0%,100%{transform:scale(1);} 50%{transform:scale(1.1);} }
+        @keyframes sway { 0%,100%{transform:rotate(0deg);} 50%{transform:rotate(5deg);} }
+        @keyframes glow-pulse { 0%,100%{opacity:0.8;} 50%{opacity:1; filter:blur(2px);} }
+
+        /* Hourglass */
+        .hourglass .hourglass-timer { position:absolute; width:40px; height:45px; top:7px; left:10px; transition:0.4s ease; }
+        .hourglass .glass-top { position:absolute; width:30px; height:20px; border:3px solid #ecf0f1; border-bottom:none; border-radius:15px 15px 0 0; top:5px; left:5px; }
+        .hourglass .glass-bottom { position:absolute; width:30px; height:20px; border:3px solid #ecf0f1; border-top:none; border-radius:0 0 15px 15px; bottom:5px; left:5px; }
+        .hourglass .sand-top { position:absolute; width:20px; height:15px; background:#f1c40f; clip-path:polygon(0% 100%,100% 100%,50% 0%); top:8px; left:10px; opacity:1; transition:0.3s ease; }
+        .hourglass .sand-bottom { position:absolute; width:20px; height:0; background:#f1c40f; clip-path:polygon(0% 0%,100% 0%,50% 100%); bottom:8px; left:10px; opacity:0; transition:0.3s ease; }
+        .hourglass .sand-particle { position:absolute; width:2px; height:2px; background:#f1c40f; border-radius:50%; opacity:0; transition:0.3s ease; }
+        .hourglass .sand-particle:nth-child(6) { top:20px; left:15px; } .hourglass .sand-particle:nth-child(7) { top:22px; left:20px; } .hourglass .sand-particle:nth-child(8) { top:18px; left:25px; }
+        #hourglass:checked + .toggle-item .hourglass-timer { transform:translateX(58px); }
+        #hourglass:checked + .toggle-item .sand-top { opacity:0; height:0; }
+        #hourglass:checked + .toggle-item .sand-bottom { opacity:1; height:15px; }
+        #hourglass:checked + .toggle-item .sand-particle { opacity:1; animation:fall 2s infinite; }
+        @keyframes fall { 0%{transform:translateY(0); opacity:1;} 100%{transform:translateY(20px); opacity:0;} }
+
+                /* Phoenix */
+        .phoenix .phoenix-bird { position:absolute; width:45px; height:45px; top:7px; left:7px; transition:0.4s ease; }
+        .phoenix .body { position:absolute; width:25px; height:30px; background:#e67e22; border-radius:50% 50% 30% 30%; top:10px; left:10px; }
+        .phoenix .head { position:absolute; width:12px; height:12px; background:#e67e22; border-radius:50%; top:5px; left:16px; }
+        .phoenix .beak { position:absolute; width:6px; height:4px; background:#f39c12; clip-path:polygon(0% 0%,100% 50%,0% 100%); top:8px; left:25px; }
+        .phoenix .eye { position:absolute; width:3px; height:3px; background:#2c3e50; border-radius:50%; top:8px; left:20px; }
+        .phoenix .wing { position:absolute; width:15px; height:20px; background:#d35400; border-radius:50% 0 50% 0; right:5px; top:12px; transform:rotate(-10deg); animation:wing-flap 0.5s infinite; }
+        .phoenix .tail { position:absolute; width:10px; height:15px; background:#f39c12; clip-path:polygon(0% 0%,100% 50%,0% 100%); bottom:5px; left:5px; transform:rotate(-20deg); }
+        .phoenix .flame { position:absolute; width:8px; height:12px; background:#e74c3c; border-radius:50%; opacity:0; transform:scale(0); transition:0.3s ease; filter:blur(2px); }
+        .phoenix .flame:nth-child(8) { top:20px; left:30px; animation:phoenix-fire 0.5s infinite; }
+        .phoenix .flame:nth-child(9) { top:25px; left:35px; animation:phoenix-fire 0.5s infinite 0.2s; }
+        .phoenix .ash { position:absolute; width:4px; height:4px; background:#7f8c8d; border-radius:50%; opacity:0; transform:scale(0); transition:0.3s ease; }
+        .phoenix .ash:nth-child(10) { bottom:0; left:5px; } .phoenix .ash:nth-child(11) { bottom:5px; left:15px; }
+        #phoenix:checked + .toggle-item .phoenix-bird { transform:translateX(58px); }
+        #phoenix:checked + .toggle-item .flame { opacity:1; transform:scale(1); }
+        #phoenix:checked + .toggle-item .ash { opacity:1; transform:scale(1); animation:rise 2s infinite; }
+        #phoenix:checked + .toggle-item .body, #phoenix:checked + .toggle-item .head { animation:rebirth 1s infinite; }
+        @keyframes wing-flap { 0%,100%{transform:rotate(-10deg) scale(1);} 50%{transform:rotate(-20deg) scale(1.1);} }
+        @keyframes phoenix-fire { 0%,100%{transform:scale(1); opacity:0.8;} 50%{transform:scale(1.5); opacity:1;} }
+        @keyframes rise { 0%{transform:translateY(0) scale(1); opacity:0.5;} 100%{transform:translateY(-20px) scale(2); opacity:0;} }
+        @keyframes rebirth { 0%,100%{background:#e67e22;} 50%{background:#e74c3c;} }
+    </style>
+</head>
+<body>
+    <!-- 1. Normal Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle normal">
+            <input id="normal" type="checkbox" />
+            <label class="toggle-item" for="normal"></label>
+        </div>
+        <div class="name">NORMAL</div>
+    </div>
+    <!-- 2. Transparent Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle transparent">
+            <input id="transparent" type="checkbox" />
+            <label class="toggle-item" for="transparent"></label>
+        </div>
+        <div class="name">TRANSPARENT</div>
+    </div>
+    <!-- 3. Yes/No Toggle (Checkcross) -->
+    <div class="toggle-wrapper">
+        <div class="toggle checkcross">
+            <input id="checkcross" type="checkbox" />
+            <label class="toggle-item" for="checkcross">
+                <div class="check"></div>
+            </label>
+        </div>
+        <div class="name">YES & NO</div>
+    </div>
+    <!-- 4. Gravity Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle gravity">
+            <input id="gravity" type="checkbox" />
+            <label class="toggle-item" for="gravity"></label>
+        </div>
+        <div class="name">GRAVITY</div>
+    </div>
+    <!-- 5. Light/Dark Mode Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle light-dark">
+            <input id="light-dark" type="checkbox" />
+            <label class="toggle-item" for="light-dark">
+                <div class="sun-moon">
+                    <div class="sun"></div>
+                    <div class="moon"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">LIGHT/DARK</div>
+    </div>
+    <!-- 6. Coffee Cup Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle coffee">
+            <input id="coffee" type="checkbox" />
+            <label class="toggle-item" for="coffee">
+                <div class="coffee-cup">
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="steam"></div>
+                    <div class="liquid"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">COFFEE TIME</div>
+    </div>
+    <!-- 7. Robot Face Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle robot">
+            <input id="robot" type="checkbox" />
+            <label class="toggle-item" for="robot">
+                <div class="robot-face">
+                    <div class="antenna"></div>
+                    <div class="antenna right"></div>
+                    <div class="eyes">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">ROBOT MODE</div>
+    </div>
+    <!-- 8. Lock/Unlock Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle lock">
+            <input id="lock" type="checkbox" />
+            <label class="toggle-item" for="lock">
+                <div class="lock-icon">
+                    <div class="lock-body"></div>
+                    <div class="lock-shackle"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">LOCK/UNLOCK</div>
+    </div>
+    <!-- 9. Weather Toggle (Sun/Rain) -->
+    <div class="toggle-wrapper">
+        <div class="toggle weather">
+            <input id="weather" type="checkbox" />
+            <label class="toggle-item" for="weather">
+                <div class="weather-icon">
+                    <div class="sunny">
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                        <div class="ray"></div>
+                    </div>
+                    <div class="rainy">
+                        <div class="cloud"></div>
+                        <div class="raindrop"></div>
+                        <div class="raindrop"></div>
+                        <div class="raindrop"></div>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <div class="name">SUN/RAIN</div>
+    </div>
+    <!-- 10. Heartbeat Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle heartbeat">
+            <input id="heartbeat" type="checkbox" />
+            <label class="toggle-item" for="heartbeat">
+                <div class="heart"></div>
+                <div class="ecg-line"></div>
+            </label>
+        </div>
+        <div class="name">HEARTBEAT</div>
+    </div>
+    <!-- 11. Rocket Launch Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle rocket">
+            <input id="rocket" type="checkbox" />
+            <label class="toggle-item" for="rocket">
+                <div class="rocket-ship">
+                    <div class="rocket-body"></div>
+                    <div class="flame"></div>
+                    <div class="window"></div>
+                </div>
+                <div class="stars"></div>
+            </label>
+        </div>
+        <div class="name">ROCKET LAUNCH</div>
+    </div>
+    <!-- 12. Plant Growth Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle plant">
+            <input id="plant" type="checkbox" />
+            <label class="toggle-item" for="plant">
+                <div class="plant-pot">
+                    <div class="pot"></div>
+                    <div class="seed"></div>
+                    <div class="sprout"></div>
+                    <div class="leaf"></div>
+                    <div class="leaf right"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">PLANT GROWTH</div>
+    </div>
+    <!-- 13. Ninja Star Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle ninja">
+            <input id="ninja" type="checkbox" />
+            <label class="toggle-item" for="ninja">
+                <div class="shuriken"></div>
+                <div class="shadow"></div>
+            </label>
+        </div>
+        <div class="name">NINJA STAR</div>
+    </div>
+    <!-- 14. Alien Invasion Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle alien">
+            <input id="alien" type="checkbox" />
+            <label class="toggle-item" for="alien">
+                <div class="ufo">
+                    <div class="saucer"></div>
+                    <div class="dome"></div>
+                    <div class="beam"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">ALIEN INVASION</div>
+    </div>
+    <!-- 15. Fire/Water Element Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle elements">
+            <input id="elements" type="checkbox" />
+            <label class="toggle-item" for="elements">
+                <div class="element-fire">
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                    <div class="flame"></div>
+                </div>
+                <div class="element-water">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">FIRE/WATER</div>
+    </div>
+    <!-- 16. Magic Wand Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle magic">
+            <input id="magic" type="checkbox" />
+            <label class="toggle-item" for="magic">
+                <div class="wand"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="magic-circle"></div>
+            </label>
+        </div>
+        <div class="name">MAGIC SPELL</div>
+    </div>
+    <!-- 17. Penguin Waddle Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle penguin">
+            <input id="penguin" type="checkbox" />
+            <label class="toggle-item" for="penguin">
+                <div class="penguin-body">
+                    <div class="belly"></div>
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                    <div class="beak"></div>
+                    <div class="wing"></div>
+                    <div class="feet"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">PENGUIN WADDLE</div>
+    </div>
+    <!-- 18. Pizza Slice Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle pizza">
+            <input id="pizza" type="checkbox" />
+            <label class="toggle-item" for="pizza">
+                <div class="pizza-slice">
+                    <div class="crust"></div>
+                    <div class="cheese"></div>
+                    <div class="pepperoni"></div>
+                    <div class="pepperoni"></div>
+                    <div class="pepperoni"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">PIZZA TIME</div>
+    </div>
+    <!-- 19. Ghost Haunt Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle ghost">
+            <input id="ghost" type="checkbox" />
+            <label class="toggle-item" for="ghost">
+                <div class="ghost-char">
+                    <div class="head"></div>
+                    <div class="eyes">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                    <div class="tail"></div>
+                    <div class="tail"></div>
+                    <div class="tail"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">BOO! 👻</div>
+    </div>
+    <!-- 20. Battery Charging Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle battery">
+            <input id="battery" type="checkbox" />
+            <label class="toggle-item" for="battery">
+                <div class="battery-cell">
+                    <div class="battery-body"></div>
+                    <div class="battery-head"></div>
+                    <div class="charge-level"></div>
+                    <div class="charge-level"></div>
+                    <div class="charge-level"></div>
+                    <div class="bolt"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">BATTERY CHARGING</div>
+    </div>
+    <!-- 21. Rainbow Unicorn Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle unicorn">
+            <input id="unicorn" type="checkbox" />
+            <label class="toggle-item" for="unicorn">
+                <div class="unicorn-head">
+                    <div class="horn"></div>
+                    <div class="ear"></div>
+                    <div class="ear right"></div>
+                    <div class="eye"></div>
+                    <div class="mane"></div>
+                    <div class="mane"></div>
+                    <div class="mane"></div>
+                    <div class="rainbow"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">MAGIC UNICORN</div>
+    </div>
+    <!-- 22. Volcano Eruption Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle volcano">
+            <input id="volcano" type="checkbox" />
+            <label class="toggle-item" for="volcano">
+                <div class="volcano-mountain">
+                    <div class="mountain"></div>
+                    <div class="crater"></div>
+                    <div class="lava"></div>
+                    <div class="lava"></div>
+                    <div class="lava"></div>
+                    <div class="smoke"></div>
+                    <div class="smoke"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">VOLCANO</div>
+    </div>
+    <!-- 23. Hourglass Time Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle hourglass">
+            <input id="hourglass" type="checkbox" />
+            <label class="toggle-item" for="hourglass">
+                <div class="hourglass-timer">
+                    <div class="glass-top"></div>
+                    <div class="glass-bottom"></div>
+                    <div class="sand-top"></div>
+                    <div class="sand-bottom"></div>
+                    <div class="sand-particle"></div>
+                    <div class="sand-particle"></div>
+                    <div class="sand-particle"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">HOURGLASS</div>
+    </div>
+    <!-- 24. Cactus Bloom Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle cactus">
+            <input id="cactus" type="checkbox" />
+            <label class="toggle-item" for="cactus">
+                <div class="cactus-plant">
+                    <div class="pot"></div>
+                    <div class="cactus-body"></div>
+                    <div class="cactus-arm"></div>
+                    <div class="cactus-arm right"></div>
+                    <div class="flower"></div>
+                    <div class="flower"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">CACTUS BLOOM</div>
+    </div>
+    <!-- 25. Snowman Melt Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle snowman">
+            <input id="snowman" type="checkbox" />
+            <label class="toggle-item" for="snowman">
+                <div class="snowman-body">
+                    <div class="snowball bottom"></div>
+                    <div class="snowball middle"></div>
+                    <div class="snowball top"></div>
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                    <div class="nose"></div>
+                    <div class="hat"></div>
+                    <div class="puddle"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">SNOWMAN MELT</div>
+    </div>
+    <!-- 26. Dragon Breath Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle dragon">
+            <input id="dragon" type="checkbox" />
+            <label class="toggle-item" for="dragon">
+                <div class="dragon-head">
+                    <div class="head"></div>
+                    <div class="horn"></div>
+                    <div class="horn right"></div>
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                    <div class="nostril"></div>
+                    <div class="fire"></div>
+                    <div class="fire"></div>
+                    <div class="fire"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">DRAGON BREATH</div>
+    </div>
+    <!-- 27. Lightbulb Idea Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle lightbulb">
+            <input id="lightbulb" type="checkbox" />
+            <label class="toggle-item" for="lightbulb">
+                <div class="bulb">
+                    <div class="glass"></div>
+                    <div class="filament"></div>
+                    <div class="base"></div>
+                    <div class="light-rays"></div>
+                    <div class="light-rays"></div>
+                    <div class="light-rays"></div>
+                    <div class="light-rays"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">BRIGHT IDEA</div>
+    </div>
+    <!-- 28. Jellyfish Glow Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle jellyfish">
+            <input id="jellyfish" type="checkbox" />
+            <label class="toggle-item" for="jellyfish">
+                <div class="jelly">
+                    <div class="bell"></div>
+                    <div class="tentacle"></div>
+                    <div class="tentacle"></div>
+                    <div class="tentacle"></div>
+                    <div class="tentacle"></div>
+                    <div class="glow-spot"></div>
+                    <div class="glow-spot"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">JELLYFISH GLOW</div>
+    </div>
+    <!-- 29. Treasure Chest Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle treasure">
+            <input id="treasure" type="checkbox" />
+            <label class="toggle-item" for="treasure">
+                <div class="treasure-chest">
+                    <div class="chest-body"></div>
+                    <div class="chest-lid"></div>
+                    <div class="lock"></div>
+                    <div class="gold"></div>
+                    <div class="gold"></div>
+                    <div class="gold"></div>
+                    <div class="glow"></div>
+                </div>
+            </label>
+        </div>
+        <div class="name">TREASURE CHEST</div>
+    </div>
+    <!-- 30. Phoenix Rebirth Toggle -->
+    <div class="toggle-wrapper">
+        <div class="toggle phoenix">
+            <input id="phoenix" type="checkbox" />
+            <label class="toggle-item" for="phoenix">
+                <div class="phoenix-bird">
+                    <div clas
